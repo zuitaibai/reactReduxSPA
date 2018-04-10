@@ -20,7 +20,8 @@ module.exports = {
   },
   "rules": {
     "indent": 0,
-    "linebreak-style": ["error", "unix"],
+    // "linebreak-style": ["error", "unix"],
+    "linebreak-style": ["error", "windows"],
     "semi": ["error", "never"],
     "react/prop-types": ["ignore"], // 干掉 react-prop，日后再补~
     "react/display-name": ["ignore"],
