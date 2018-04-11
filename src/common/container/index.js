@@ -4,7 +4,7 @@ import { Menu, Icon, Switch, Layout } from 'antd'
 import { allMenu } from 'utils/menu'
 import Top from './header'
 import Contents from './content'
-import Footer from './bottom'
+import Footer from './footer'
 import './index.less'
 
 const SubMenu = Menu.SubMenu

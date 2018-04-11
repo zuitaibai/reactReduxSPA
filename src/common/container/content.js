@@ -13,12 +13,10 @@ import TodoList from 'pages/todoList'
 import Search from 'pages/search'
 import Waterfall from 'pages/waterfall'
 
-const { Content } = Layout
-
 export default class Contents extends React.Component {
   render() {
     return (
-      <Content className="content" id="content">
+      <Layout className="content" id="content">
         <Route path="/index" component={index} />
         <Route path="/follow" component={follow} />
         <Route path="/tools" component={Tools} />
@@ -29,7 +27,7 @@ export default class Contents extends React.Component {
         <Route path="/todoList" component={TodoList} />
         <Route path="/searchEngine" component={Search} />
         <Route path="/waterfall" component={Waterfall} />
-      </Content>
+      </Layout>
     )
   }
 }
