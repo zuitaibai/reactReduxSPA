@@ -1,27 +1,27 @@
 import React from 'react'
-import { HashRouter } from 'react-router-dom'
-import { Route, Redirect } from 'react-router'
-import Container from 'container'
-import Login from 'pages/login'
-import createHistory from 'history/createBrowserHistory'
+import { Route } from 'react-router'
+import { Switch } from 'react-router-dom'
 
-const history = createHistory()
-const location = history.location
+import follow from 'pages/follow'
+import Tools from 'pages/tools'
+import Music from 'pages/music'
+import Todo from 'pages/todo'
+import TodoList from 'pages/todoList'
+import Search from 'pages/search'
 
-const routes = (
-  <HashRouter>
-    <div>
-      <Route path="/" component={Container} />
-      <Route path="/login" component={Login} />
-      {location.hash === '#/' ? <Redirect to='/login' /> : ''}
-    </div>
-  </HashRouter>
-  // 以上使用 HashRouter 是为了 github 上展示方便，以上路由写法的缺陷在于加载 login 页时候会把其他页面也加载出来，
-  // 项目中可使用如下写法
-  // <Switch>
-  //   <Route exec path="/" component={Container} />
-  //   <Route exec path="/login" component={Login} />
-  // </Switch>
-)
 
-export default routes
+export default class Routes extends React.Component {
+    render() {
+        return (
+            <Switch>
+                <Route path="/follow" component={follow} />
+                <Route path="/tools" component={Tools} />
+                <Route path="/music" component={Music} />
+                <Route path="/todo" component={Todo} />
+                <Route path="/todoList" component={TodoList} />
+                <Route path="/searchEngine" component={Search} />
+                <Route component={Tools}/>
+            </Switch>
+        )
+    }
+}

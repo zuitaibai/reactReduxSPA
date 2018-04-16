@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import routes from '../common/routes'
+import Layouts from '../common/container/layout'
 import './index.less'
 import DevTools from './devTools'
 import configureStore from './store/configureStore'
@@ -16,7 +16,7 @@ ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <div>
-        { routes }
+          {Layouts}
         {process.env.NODE_ENV === 'development' ? <DevTools /> : ''}
       </div>
     </ConnectedRouter>
